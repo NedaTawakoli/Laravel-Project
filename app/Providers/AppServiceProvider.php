@@ -1,0 +1,32 @@
+<?php
+
+namespace App\Providers;
+use App\Models\User;
+use App\Models\Student;
+use Illuminate\Support\Facades\Gate;
+use Illuminate\Support\ServiceProvider;
+
+class AppServiceProvider extends ServiceProvider
+{
+    /**
+     * Register any application services.
+     */
+    public function register(): void
+    {
+        //
+    }
+
+    /**
+     * Bootstrap any application services.
+     */
+    public function boot(): void
+    {
+        //
+        // Gate::define('edit-student',function(User $user,Student $student){
+        // return $user->id ===$student->user_id;
+        // });
+        // Gate::define('delete',function(User $user,Student $student){
+        //     return $user->id ===$student->user_id || $user->user_type === $student->user_id;
+        // });
+    }
+}

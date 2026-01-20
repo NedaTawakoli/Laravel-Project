@@ -1,0 +1,49 @@
+@import "tailwindcss";
+@import url("../public/fonts/Yekan.ttf");
+@theme{
+  --font-Yekan:"Yekan.ttf",mono;
+}
+
+@layer components{
+    .bg-cliper{
+        clip-path: polygon(20% 0%, 80% 0, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
+    }
+
+.todoListDiv{
+    @apply w-[230px] my-2.5  rounded-sm shadow-2xs bg-white text-black p-4;
+}
+.bookDiv{
+  @apply w-[80%] mx-auto my-3 bg-white rounded-sm shadow-2xs flex justify-evenly flex-wrap;
+}
+  .bookImg{
+    @apply w-[200px] text-center border rounded-sm mx-auto h-[130px] p-3 ;
+  }
+  .bg-gradien{
+    @apply bg-linear-60 from-red-100 to-green-200 via-orange-200;
+  }
+  .bg-topic{
+    @apply bg-linear-60 from-gray-200 to-gray-100 via-gray-400
+  }
+  .home{
+    @apply text-center h-[400px]   transition-all duration-1000 ease-linear  w-[350px] border border-blue-300 p-4 rounded-xs my-5
+  }
+  .image{
+    @apply h-[280px] w-[300px] rounded-md
+  }
+  .box1{
+    @apply bg-red-500 text-2xl text-white ;
+  }
+  .btn{
+    @apply py-3 px-4 bg-pink-500 text-white rounded-md;
+  }
+  .divTotal{
+  @apply border border-black p-4 text-center w-full;
+  }
+  .rotatedDiv{
+    @apply w-[70px] h-[100px] hover:border-gray-600 transition-all duration-700 bg-transparent rounded-xs rotate-55 border-gray-300 border inline-block;
+  }
+  .cooffe{
+    @apply h-[80vh] border rounded-md w-full py-3 px-4 justify-between items-center bg-pink-500 text-white
+  }
+  
+} 
