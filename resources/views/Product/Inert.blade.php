@@ -19,7 +19,7 @@
         <input class="w-full outline-none py-3 border-slate-300" type="file" accept="images/* " name="photo">
         {{-- <input class="w-full outline-none py-3 border-slate-300" type="number" name="productId" placeholder="Product Id"> --}}
         <textarea class="h-20 w-full outline-none py-3 border-slate-300" name="description" placeholder="Insert The Description Products"></textarea>
-        <button type="submit" class="w-full py-4 border bg-slate-300 my-2 ">Save</button>
+        <button type="submit" class="w-full py-4 border bg-slate-300 my-2 ">Save a product</button>
     </form>
 </div>
    </div>
