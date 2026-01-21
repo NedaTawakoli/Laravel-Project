@@ -8,6 +8,7 @@ use App\Http\Controllers\TextController;
 use App\Http\Controllers\PhotosController;
 use App\Http\Controllers\SampleController;
 use App\Http\Controllers\SongsController;
+use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Middleware\StudentMiddleware;
 // use App\Http\Middleware\TeacherMiddleware;
@@ -60,6 +61,10 @@ Route::prefix('customer')->controller(CustomerController::class)->group(function
     Route::get('/','index');
     Route::view('/create','Customer.add');
     Route::POST('/uploedCustomer','create');
+});
+Route::prefix('product')->controller(ProductsController::class)->group(function(){
+    Route::get('/add','showForm');
+    Route::post('/create','create');
 });
 
 require __DIR__.'/auth.php';
