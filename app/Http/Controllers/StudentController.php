@@ -30,5 +30,8 @@ class StudentController extends Controller
    session()->flash('massage','data has been updata');
    return redirect('student');
    }
+   public function fetchStdent(){
+      return view('Student.form');
+   }
  
 }

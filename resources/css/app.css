@@ -1,3 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+.div1{
+    background-image: url('C:\Users\Neda Tawakoli\Documents\img/JPEG File (.jpeg)');
+}

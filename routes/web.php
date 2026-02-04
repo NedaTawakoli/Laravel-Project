@@ -11,11 +11,11 @@ use App\Http\Controllers\SongsController;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Middleware\StudentMiddleware;
-// use App\Http\Middleware\TeacherMiddleware;
+use App\Http\Middleware\TeacherMiddleware;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -35,6 +35,7 @@ Route::prefix('student')->controller(StudentController::class)->middleware(Stude
     Route::get('/edit/{id}','edit');
     Route::put('/update/{id}','update');
     Route::view('/add','Student.add');
+    Route::get('/form','fetchStdent');
 });
 Route::prefix('teacher')->controller(TeacherController::class)->middleware('teacher')->group(function(){
     Route::get('/','show');
@@ -62,6 +63,7 @@ Route::prefix('customer')->controller(CustomerController::class)->group(function
     Route::view('/create','Customer.add');
     Route::POST('/uploedCustomer','create');
 });
+Route::get('/',[ProductsController::class,'landing']);
 Route::prefix('product')->controller(ProductsController::class)->group(function(){
     Route::get('/add','showForm');
     Route::post('/create','create');

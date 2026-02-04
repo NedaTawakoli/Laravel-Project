@@ -17,6 +17,9 @@ class ProductsController extends Controller
         //     "price"=>"required|min:80|max:",
         //     "description"=>"required|min:5|max|100",
         // ]);
+        $product = new Products();
+        $product->name = $request->name;
+        $product->save();
         $imgPath = null;
         if($request->hasFile('photo')){
             $imgPath = $request->file('photo')->store('ProductImage','public');
@@ -27,8 +30,14 @@ class ProductsController extends Controller
         $productDetail->description = $request->description;
         $productDetail->quantity =$request->many;
         $productDetail->made_in = $request->madein;
-        $productDetail->product_id = $request->prodeuct_id;
+        $productDetail->product_id = $product->id;
         $productDetail->img_url =$imgPath;
         $productDetail->save();
+    }
+    public function landing(){
+       $products =  Products::with('productDetail')->get();
+     
+    //    return $products;
+        // return view('welcome')->with('products',$products);
     }
 }
